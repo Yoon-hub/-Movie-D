@@ -15,12 +15,18 @@ class MovieCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var posterImageView: UIImageView!
     @IBOutlet weak var overViewLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
- 
+    @IBOutlet weak var voteAverageLabel: UILabel!
+    
     func desginmovieView(){
-        movieView.layer.borderWidth = 1
-        movieView.layer.borderColor = UIColor.black.cgColor
-        movieView.layer.cornerRadius = 15
+        movieView.layer.cornerRadius = 10
         
+        movieView.layer.masksToBounds = false
+
+        movieView.layer.shadowOffset = CGSize(width: 5 , height: 5)
+        movieView.layer.shadowOpacity = 0.5
+        movieView.layer.shadowRadius = 10
+        voteAverageLabel.font = UIFont.systemFont(ofSize: 15, weight: .light)
+    
     }
     
 }
