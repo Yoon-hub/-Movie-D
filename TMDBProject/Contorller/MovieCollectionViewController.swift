@@ -47,13 +47,14 @@ class MovieCollectionViewController: UICollectionViewController {
                     let genre = "#" + self.checkGenre(number: item["genre_ids"][0].intValue)
                     let voteAverage = String(format: "%.1f", item["vote_average"].doubleValue)
                     let releaseDate = item["release_date"].stringValue
+                    let backdrop = item["backdrop_path"].stringValue
                     
-                    self.movieCardList.append(MovieCard(id: id, title: title, poster: poster, overView: overView, genre: genre, voteAverage: voteAverage, releaseDate: releaseDate))
+                    self.movieCardList.append(MovieCard(id: id, title: title, poster: poster, overView: overView, genre: genre, voteAverage: voteAverage, releaseDate: releaseDate, backdrop: backdrop))
                     
                 }
                 self.collectionView.reloadData()
                 self.hud.dismiss(animated: true)
-                print(self.movieCardList.count)
+                //print(self.movieCardList)
             case .failure(let error):
                 print(error)
             }
@@ -104,6 +105,16 @@ class MovieCollectionViewController: UICollectionViewController {
         cell.voteAverageLabel.text = nowcell.voteAverage
         
         return cell
+        
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: DetailViewController.resuableIdentifer) as! DetailViewController
+        
+        vc.selectMovie = movieCardList[indexPath.row]
+        
+        navigationController?.pushViewController(vc, animated: true)
         
     }
     

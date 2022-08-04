@@ -16,5 +16,6 @@ struct MovieCard {
     let genre: String
     let voteAverage: String
     let releaseDate: String
+    let backdrop: String
     
 }

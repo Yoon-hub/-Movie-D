@@ -12,7 +12,19 @@ protocol ReuseableViewProtocol {
     static var resuableIdentifer : String { get }
 }
 
+extension UIViewController: ReuseableViewProtocol {
+    static var resuableIdentifer: String {
+        return String(describing: self)
+    }
+}
+
 extension UICollectionViewCell: ReuseableViewProtocol {
+    static var resuableIdentifer: String {
+        return String(describing: self)
+    }
+}
+
+extension UITableViewCell: ReuseableViewProtocol {
     static var resuableIdentifer: String {
         return String(describing: self)
     }

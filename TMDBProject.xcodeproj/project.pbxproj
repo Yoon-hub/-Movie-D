@@ -18,6 +18,9 @@
 		67DF2B83289BDD2A004FB633 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 67DF2B82289BDD2A004FB633 /* SwiftyJSON */; };
 		67DF2B88289BDD86004FB633 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DF2B87289BDD86004FB633 /* APIKey.swift */; };
 		67DF2B8B289BF0A1004FB633 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 67DF2B8A289BF0A1004FB633 /* JGProgressHUD */; };
+		67DF2B8D289C19C1004FB633 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DF2B8C289C19C1004FB633 /* DetailViewController.swift */; };
+		67DF2B8F289C231B004FB633 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DF2B8E289C231B004FB633 /* DetailTableViewCell.swift */; };
+		67DF2B91289C2F53004FB633 /* TableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DF2B90289C2F53004FB633 /* TableItem.swift */; };
 		67DF87F0289ACA6E00B57E58 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 67DF87EF289ACA6E00B57E58 /* Kingfisher */; };
 		67DF87F4289AD7D100B57E58 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DF87F3289AD7D100B57E58 /* MovieCollectionViewCell.swift */; };
 		67DF87F6289AD80200B57E58 /* ReuseableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DF87F5289AD80200B57E58 /* ReuseableViewProtocol.swift */; };
@@ -35,6 +38,9 @@
 		67DF2B7A289BD574004FB633 /* CollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionView+Extension.swift"; sourceTree = "<group>"; };
 		67DF2B7C289BD6D8004FB633 /* MovieCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCard.swift; sourceTree = "<group>"; };
 		67DF2B87289BDD86004FB633 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		67DF2B8C289C19C1004FB633 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		67DF2B8E289C231B004FB633 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
+		67DF2B90289C2F53004FB633 /* TableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableItem.swift; sourceTree = "<group>"; };
 		67DF87F3289AD7D100B57E58 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
 		67DF87F5289AD80200B57E58 /* ReuseableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseableViewProtocol.swift; sourceTree = "<group>"; };
 		67DF87F7289ADB9900B57E58 /* MovieCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +114,8 @@
 			children = (
 				67DF87F3289AD7D100B57E58 /* MovieCollectionViewCell.swift */,
 				67DF87F7289ADB9900B57E58 /* MovieCollectionViewController.swift */,
+				67DF2B8C289C19C1004FB633 /* DetailViewController.swift */,
+				67DF2B8E289C231B004FB633 /* DetailTableViewCell.swift */,
 			);
 			path = Contorller;
 			sourceTree = "<group>";
@@ -118,6 +126,7 @@
 				67DF87F5289AD80200B57E58 /* ReuseableViewProtocol.swift */,
 				67DF2B7A289BD574004FB633 /* CollectionView+Extension.swift */,
 				67DF2B7C289BD6D8004FB633 /* MovieCard.swift */,
+				67DF2B90289C2F53004FB633 /* TableItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -205,13 +214,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67DF2B8D289C19C1004FB633 /* DetailViewController.swift in Sources */,
 				67DF87F4289AD7D100B57E58 /* MovieCollectionViewCell.swift in Sources */,
 				676558402899F6BD006F3607 /* AppDelegate.swift in Sources */,
+				67DF2B91289C2F53004FB633 /* TableItem.swift in Sources */,
 				67DF2B88289BDD86004FB633 /* APIKey.swift in Sources */,
 				67DF87F8289ADB9900B57E58 /* MovieCollectionViewController.swift in Sources */,
 				67DF2B7D289BD6D8004FB633 /* MovieCard.swift in Sources */,
 				676558422899F6BD006F3607 /* SceneDelegate.swift in Sources */,
 				67DF2B7B289BD574004FB633 /* CollectionView+Extension.swift in Sources */,
+				67DF2B8F289C231B004FB633 /* DetailTableViewCell.swift in Sources */,
 				67DF87F6289AD80200B57E58 /* ReuseableViewProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
