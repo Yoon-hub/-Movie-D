@@ -19,8 +19,10 @@ class MovieCollectionViewCell: UICollectionViewCell {
     
     func desginmovieView(){
         movieView.layer.cornerRadius = 10
-        
         movieView.layer.masksToBounds = false
+        
+        posterImageView.layer.cornerRadius = 10
+        posterImageView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
 
         movieView.layer.shadowOffset = CGSize(width: 5 , height: 5)
         movieView.layer.shadowOpacity = 0.5

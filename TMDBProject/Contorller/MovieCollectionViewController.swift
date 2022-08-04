@@ -8,33 +8,43 @@
 import UIKit
 
 import Alamofire
-import SwiftyJSON
+import JGProgressHUD
 import Kingfisher
+import SwiftyJSON
+
+
 
 class MovieCollectionViewController: UICollectionViewController {
     
     var movieCardList: [MovieCard] = []
+    let hud = JGProgressHUD()
+    var startPage = 1
+    var totalPage = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.desgin()
         requestMovie()
+        collectionView.prefetchDataSource = self
     }
     
     func requestMovie() {
-        let url = EndPoint.tmdbURL + "api_key=\(APIKey.TMDB_KEY)"
+        hud.show(in: view)
+        let url = EndPoint.tmdbURL + "api_key=\(APIKey.TMDB_KEY)&page=\(startPage)"
         AF.request(url, method: .get).validate().responseData { response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
           //      print("JSON: \(json)")
                 
+                self.totalPage = json["total_pages"].intValue
+                
                 for item in json["results"].arrayValue{
                     let id = item["id"].intValue
                     let title = item["title"].stringValue
                     let poster = "\(EndPoint.imageURL)\(item["poster_path"].stringValue)"
                     let overView = item["overview"].stringValue
-                    let genre = self.checkGenre(number: item["genre_ids"][0].intValue)
+                    let genre = "#" + self.checkGenre(number: item["genre_ids"][0].intValue)
                     let voteAverage = String(format: "%.1f", item["vote_average"].doubleValue)
                     let releaseDate = item["release_date"].stringValue
                     
@@ -42,6 +52,8 @@ class MovieCollectionViewController: UICollectionViewController {
                     
                 }
                 self.collectionView.reloadData()
+                self.hud.dismiss(animated: true)
+                print(self.movieCardList.count)
             case .failure(let error):
                 print(error)
             }
@@ -93,6 +105,21 @@ class MovieCollectionViewController: UICollectionViewController {
         
         return cell
         
+    }
+    
+    
+}
+
+extension MovieCollectionViewController: UICollectionViewDataSourcePrefetching {
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        
+        for i in indexPaths{
+            if i.item == movieCardList.count - 1 && movieCardList.count < totalPage{
+                startPage += 1
+                requestMovie()
+            }
+        }
+            
     }
     
     
