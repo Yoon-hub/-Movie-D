@@ -49,6 +49,7 @@ class DetailViewController: UIViewController {
                     let profile = i["profile_path"].stringValue
                     
                     self.tableList.append(TableItem(image: profile, name: name))
+                    
                 }
                 print(self.tableList)
                 self.detailTableView.reloadData()
@@ -57,7 +58,10 @@ class DetailViewController: UIViewController {
                 print(error)
             }
         }
+        
+
     }
+    
 }
 
 extension DetailViewController: UITableViewDataSource {

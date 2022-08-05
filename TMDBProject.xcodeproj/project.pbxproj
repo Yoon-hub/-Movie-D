@@ -12,6 +12,8 @@
 		676558472899F6BD006F3607 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 676558452899F6BD006F3607 /* Main.storyboard */; };
 		676558492899F6BF006F3607 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 676558482899F6BF006F3607 /* Assets.xcassets */; };
 		6765584C2899F6BF006F3607 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6765584A2899F6BF006F3607 /* LaunchScreen.storyboard */; };
+		6797995F289CFD80009670B0 /* CheckGenre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6797995E289CFD80009670B0 /* CheckGenre.swift */; };
+		67B5565F289CF89600E45743 /* MovieSearchAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B5565E289CF89600E45743 /* MovieSearchAPIManager.swift */; };
 		67DF2B7B289BD574004FB633 /* CollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DF2B7A289BD574004FB633 /* CollectionView+Extension.swift */; };
 		67DF2B7D289BD6D8004FB633 /* MovieCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DF2B7C289BD6D8004FB633 /* MovieCard.swift */; };
 		67DF2B80289BDD1C004FB633 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 67DF2B7F289BDD1C004FB633 /* Alamofire */; };
@@ -34,7 +36,9 @@
 		676558462899F6BD006F3607 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		676558482899F6BF006F3607 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6765584B2899F6BF006F3607 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		6765584D2899F6BF006F3607 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6765584D2899F6BF006F3607 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
+		6797995E289CFD80009670B0 /* CheckGenre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckGenre.swift; sourceTree = "<group>"; };
+		67B5565E289CF89600E45743 /* MovieSearchAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchAPIManager.swift; sourceTree = "<group>"; };
 		67DF2B7A289BD574004FB633 /* CollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionView+Extension.swift"; sourceTree = "<group>"; };
 		67DF2B7C289BD6D8004FB633 /* MovieCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCard.swift; sourceTree = "<group>"; };
 		67DF2B87289BDD86004FB633 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
@@ -88,7 +92,7 @@
 				67DF87F2289AD7BD00B57E58 /* Contorller */,
 				676558482899F6BF006F3607 /* Assets.xcassets */,
 				6765584A2899F6BF006F3607 /* LaunchScreen.storyboard */,
-				6765584D2899F6BF006F3607 /* Info.plist */,
+				6765584D2899F6BF006F3607 /* info.plist */,
 			);
 			path = TMDBProject;
 			sourceTree = "<group>";
@@ -127,6 +131,8 @@
 				67DF2B7A289BD574004FB633 /* CollectionView+Extension.swift */,
 				67DF2B7C289BD6D8004FB633 /* MovieCard.swift */,
 				67DF2B90289C2F53004FB633 /* TableItem.swift */,
+				67B5565E289CF89600E45743 /* MovieSearchAPIManager.swift */,
+				6797995E289CFD80009670B0 /* CheckGenre.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -216,9 +222,11 @@
 			files = (
 				67DF2B8D289C19C1004FB633 /* DetailViewController.swift in Sources */,
 				67DF87F4289AD7D100B57E58 /* MovieCollectionViewCell.swift in Sources */,
+				6797995F289CFD80009670B0 /* CheckGenre.swift in Sources */,
 				676558402899F6BD006F3607 /* AppDelegate.swift in Sources */,
 				67DF2B91289C2F53004FB633 /* TableItem.swift in Sources */,
 				67DF2B88289BDD86004FB633 /* APIKey.swift in Sources */,
+				67B5565F289CF89600E45743 /* MovieSearchAPIManager.swift in Sources */,
 				67DF87F8289ADB9900B57E58 /* MovieCollectionViewController.swift in Sources */,
 				67DF2B7D289BD6D8004FB633 /* MovieCard.swift in Sources */,
 				676558422899F6BD006F3607 /* SceneDelegate.swift in Sources */,

@@ -30,62 +30,16 @@ class MovieCollectionViewController: UICollectionViewController {
     
     func requestMovie() {
         hud.show(in: view)
-        let url = EndPoint.tmdbURL + "api_key=\(APIKey.TMDB_KEY)&page=\(startPage)"
-        AF.request(url, method: .get).validate().responseData { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-          //      print("JSON: \(json)")
-                
-                self.totalPage = json["total_pages"].intValue
-                
-                for item in json["results"].arrayValue{
-                    let id = item["id"].intValue
-                    let title = item["title"].stringValue
-                    let poster = "\(EndPoint.imageURL)\(item["poster_path"].stringValue)"
-                    let overView = item["overview"].stringValue
-                    let genre = "#" + self.checkGenre(number: item["genre_ids"][0].intValue)
-                    let voteAverage = String(format: "%.1f", item["vote_average"].doubleValue)
-                    let releaseDate = item["release_date"].stringValue
-                    let backdrop = item["backdrop_path"].stringValue
-                    
-                    self.movieCardList.append(MovieCard(id: id, title: title, poster: poster, overView: overView, genre: genre, voteAverage: voteAverage, releaseDate: releaseDate, backdrop: backdrop))
-                    
-                }
-                self.collectionView.reloadData()
-                self.hud.dismiss(animated: true)
-                //print(self.movieCardList)
-            case .failure(let error):
-                print(error)
-            }
+        MovieSearchAPIManger.shared.requestMovieDate(startPage: startPage) { totalPage, movieCard in
+            self.totalPage = totalPage
+            self.movieCardList.append(movieCard)
+            self.collectionView.reloadData()
+            self.hud.dismiss(animated: true)
         }
+        
+       
     }
-    func checkGenre(number: Int) -> String {
-        switch number {
-        case 28: return "Action"
-        case 12: return "Adventure"
-        case 16: return "Animation"
-        case 35: return "Comedy"
-        case 80: return "Crime"
-        case 99: return "Documentary"
-        case 18: return "Drama"
-        case 10751: return "Family"
-        case 14: return "Fantasy"
-        case 36: return "History"
-        case 27: return "Horror"
-        case 10402: return "Music"
-        case 9648: return "Mystery"
-        case 10749: return "Romance"
-        case 878: return "Science Fiction"
-        case 10770: return "TV Movie"
-        case 53: return "Thriller"
-        case 10753: return "War"
-        case 37: return "Western"
-            
-        default : return "ETC"
-        }
-    }
-    
+ 
     
     //MARK: -
     

@@ -1,0 +1,52 @@
+//
+//  MovieSearchAPIManager.swift
+//  TMDBProject
+//
+//  Created by 최윤제 on 2022/08/05.
+//
+
+import Foundation
+
+import Alamofire
+import SwiftyJSON
+
+
+class MovieSearchAPIManger {
+    
+    static let shared = MovieSearchAPIManger()
+    
+    func requestMovieDate(startPage: Int,  completionHandler: @escaping (Int, MovieCard)-> () ) {
+        let url = EndPoint.tmdbURL + "api_key=\(APIKey.TMDB_KEY)&page=\(startPage)"
+        AF.request(url, method: .get).validate().responseData { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+          //      print("JSON: \(json)")
+                
+               let totalPage = json["total_pages"].intValue
+                
+                for item in json["results"].arrayValue{
+                    let id = item["id"].intValue
+                    let title = item["title"].stringValue
+                    let poster = "\(EndPoint.imageURL)\(item["poster_path"].stringValue)"
+                    let overView = item["overview"].stringValue
+                    let genre = "#" + CheckGenre.shared.checkGenre(number: item["genre_ids"][0].intValue)
+                    let voteAverage = String(format: "%.1f", item["vote_average"].doubleValue)
+                    let releaseDate = item["release_date"].stringValue
+                    let backdrop = item["backdrop_path"].stringValue
+                    
+                    let movieCard = MovieCard(id: id, title: title, poster: poster, overView: overView, genre: genre, voteAverage: voteAverage, releaseDate: releaseDate, backdrop: backdrop)
+                    
+                    completionHandler(totalPage, movieCard)
+                    
+                }
+                
+                //print(self.movieCardList)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+ 
+    
+}
