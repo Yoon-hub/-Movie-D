@@ -38,27 +38,11 @@ class DetailViewController: UIViewController {
     
     func requestCast() {
         hud.show(in: view)
-        let url = "\(EndPoint.castURL)\(selectMovie.id)/credits?api_key=\(APIKey.TMDB_KEY)"
-        AF.request(url, method: .get).validate().responseData { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                print("JSON: \(json)")
-                for i in json["cast"].arrayValue {
-                    let name = i["name"].stringValue
-                    let profile = i["profile_path"].stringValue
-                    
-                    self.tableList.append(TableItem(image: profile, name: name))
-                    
-                }
-                print(self.tableList)
-                self.detailTableView.reloadData()
-                self.hud.dismiss(animated: true)
-            case .failure(let error):
-                print(error)
-            }
+        MovieSearchAPIManger.shared.requestCastDate(id: selectMovie.id) { TableItem in
+            self.tableList.append(TableItem)
+            self.detailTableView.reloadData()
+            self.hud.dismiss(animated: true)
         }
-        
 
     }
     

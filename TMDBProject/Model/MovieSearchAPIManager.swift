@@ -13,6 +13,8 @@ import SwiftyJSON
 
 class MovieSearchAPIManger {
     
+    private init() {}
+    
     static let shared = MovieSearchAPIManger()
     
     func requestMovieDate(startPage: Int,  completionHandler: @escaping (Int, MovieCard)-> () ) {
@@ -46,6 +48,30 @@ class MovieSearchAPIManger {
                 print(error)
             }
         }
+    }
+    
+    func requestCastDate(id: Int, completionHandler: @escaping (TableItem) -> ()) {
+        
+ 
+        let url = "\(EndPoint.castURL)\(id)/credits?api_key=\(APIKey.TMDB_KEY)"
+        AF.request(url, method: .get).validate().responseData { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                print("JSON: \(json)")
+                for i in json["cast"].arrayValue {
+                    let name = i["name"].stringValue
+                    let profile = i["profile_path"].stringValue
+                    
+                    completionHandler(TableItem(image: profile, name: name))
+    
+                    
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+        
     }
  
     

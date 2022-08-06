@@ -57,8 +57,21 @@ class MovieCollectionViewController: UICollectionViewController {
         cell.overViewLabel.text = nowcell.overView
         cell.titleLabel.text = nowcell.title
         cell.voteAverageLabel.text = nowcell.voteAverage
+        cell.urlButton.tag = nowcell.id
+        cell.urlButton.addTarget(self, action: #selector(requestTrailer(sender:)), for: .touchUpInside)
         
         return cell
+        
+    }
+    
+    @objc
+    func requestTrailer(sender: UIButton){
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: WebViewController.resuableIdentifer) as! WebViewController
+        vc.movieId = String(sender.tag)
+        
+        navigationController?.pushViewController(vc, animated: true)
+
         
     }
     
