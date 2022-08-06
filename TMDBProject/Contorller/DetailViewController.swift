@@ -40,7 +40,10 @@ class DetailViewController: UIViewController {
         hud.show(in: view)
         MovieSearchAPIManger.shared.requestCastDate(id: selectMovie.id) { TableItem in
             self.tableList.append(TableItem)
-            self.detailTableView.reloadData()
+            DispatchQueue.main.async {
+                self.detailTableView.reloadData()
+            }
+            
             self.hud.dismiss(animated: true)
         }
 

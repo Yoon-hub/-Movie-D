@@ -33,7 +33,10 @@ class MovieCollectionViewController: UICollectionViewController {
         MovieSearchAPIManger.shared.requestMovieDate(startPage: startPage) { totalPage, movieCard in
             self.totalPage = totalPage
             self.movieCardList.append(movieCard)
-            self.collectionView.reloadData()
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+            
             self.hud.dismiss(animated: true)
         }
         
@@ -93,7 +96,7 @@ extension MovieCollectionViewController: UICollectionViewDataSourcePrefetching {
         
         for i in indexPaths{
             if i.item == movieCardList.count - 1 && movieCardList.count < totalPage{
-                startPage += 1
+                startPage += 1  
                 requestMovie()
             }
         }

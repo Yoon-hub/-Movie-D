@@ -19,7 +19,7 @@ class MovieSearchAPIManger {
     
     func requestMovieDate(startPage: Int,  completionHandler: @escaping (Int, MovieCard)-> () ) {
         let url = EndPoint.tmdbURL + "api_key=\(APIKey.TMDB_KEY)&page=\(startPage)"
-        AF.request(url, method: .get).validate().responseData { response in
+        AF.request(url, method: .get).validate().responseData(queue: .global()) { response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
@@ -54,7 +54,7 @@ class MovieSearchAPIManger {
         
  
         let url = "\(EndPoint.castURL)\(id)/credits?api_key=\(APIKey.TMDB_KEY)"
-        AF.request(url, method: .get).validate().responseData { response in
+        AF.request(url, method: .get).validate().responseData(queue: .global()) { response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
@@ -72,6 +72,26 @@ class MovieSearchAPIManger {
             }
         }
         
+    }
+    
+    func requestTrailerDate(movieId: String, completionHandler: @escaping (String) -> () ) {
+        let url = "\(EndPoint.trailerURL)\(movieId)/videos?api_key=\(APIKey.TMDB_KEY)&language=en-US"
+        AF.request(url, method: .get).validate().responseJSON(queue: .global()) { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                print(json)
+                
+                let result = EndPoint.youTube + json["results"][0]["key"].stringValue
+                completionHandler(result)
+                
+                
+            case .failure(let error):
+                
+                print(error)
+                
+            }
+        }
     }
  
     

@@ -25,22 +25,13 @@ class WebViewController: UIViewController {
     }
     
     func requestTrailer() {
-        let url = "\(EndPoint.trailerURL)\(movieId!)/videos?api_key=\(APIKey.TMDB_KEY)&language=en-US"
         hud.show(in: view)
-        AF.request(url, method: .get).validate().responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                print(json)
-                
-                let result = EndPoint.youTube + json["results"][0]["key"].stringValue
+        MovieSearchAPIManger.shared.requestTrailerDate(movieId: movieId!) { result in
+            DispatchQueue.main.async {
                 self.openWebPage(urlStr: result)
-                self.hud.dismiss(animated: true)
-            case .failure(let error):
-                
-                print(error)
-                self.hud.dismiss(animated: true)
             }
+          
+            self.hud.dismiss(animated: true)
         }
     }
     
