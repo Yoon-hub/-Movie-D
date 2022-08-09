@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		672E041A28A2667000BE3D2F /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 672E041928A2667000BE3D2F /* CardView.xib */; };
+		672E041C28A266D000BE3D2F /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672E041B28A266D000BE3D2F /* CardView.swift */; };
+		672E042028A26EBA00BE3D2F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672E041F28A26EBA00BE3D2F /* MainViewController.swift */; };
+		672E042228A275CC00BE3D2F /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672E042128A275CC00BE3D2F /* MainTableViewCell.swift */; };
+		672E042428A27F9D00BE3D2F /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 672E042328A27F9D00BE3D2F /* MainCollectionViewCell.swift */; };
 		676558402899F6BD006F3607 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6765583F2899F6BD006F3607 /* AppDelegate.swift */; };
 		676558422899F6BD006F3607 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676558412899F6BD006F3607 /* SceneDelegate.swift */; };
 		676558472899F6BD006F3607 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 676558452899F6BD006F3607 /* Main.storyboard */; };
@@ -31,6 +36,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		672E041928A2667000BE3D2F /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
+		672E041B28A266D000BE3D2F /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		672E041F28A26EBA00BE3D2F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		672E042128A275CC00BE3D2F /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		672E042328A27F9D00BE3D2F /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
 		6765583C2899F6BD006F3607 /* TMDBProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMDBProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6765583F2899F6BD006F3607 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		676558412899F6BD006F3607 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				676558452899F6BD006F3607 /* Main.storyboard */,
+				672E041928A2667000BE3D2F /* CardView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -123,6 +134,9 @@
 				67DF2B8C289C19C1004FB633 /* DetailViewController.swift */,
 				67DF2B8E289C231B004FB633 /* DetailTableViewCell.swift */,
 				67979960289D451A009670B0 /* WebViewController.swift */,
+				672E041F28A26EBA00BE3D2F /* MainViewController.swift */,
+				672E042128A275CC00BE3D2F /* MainTableViewCell.swift */,
+				672E042328A27F9D00BE3D2F /* MainCollectionViewCell.swift */,
 			);
 			path = Contorller;
 			sourceTree = "<group>";
@@ -136,6 +150,7 @@
 				67DF2B90289C2F53004FB633 /* TableItem.swift */,
 				67B5565E289CF89600E45743 /* MovieSearchAPIManager.swift */,
 				6797995E289CFD80009670B0 /* CheckGenre.swift */,
+				672E041B28A266D000BE3D2F /* CardView.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -212,6 +227,7 @@
 			files = (
 				6765584C2899F6BF006F3607 /* LaunchScreen.storyboard in Resources */,
 				676558492899F6BF006F3607 /* Assets.xcassets in Resources */,
+				672E041A28A2667000BE3D2F /* CardView.xib in Resources */,
 				676558472899F6BD006F3607 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -224,11 +240,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				67DF2B8D289C19C1004FB633 /* DetailViewController.swift in Sources */,
+				672E042428A27F9D00BE3D2F /* MainCollectionViewCell.swift in Sources */,
 				67DF87F4289AD7D100B57E58 /* MovieCollectionViewCell.swift in Sources */,
 				6797995F289CFD80009670B0 /* CheckGenre.swift in Sources */,
 				676558402899F6BD006F3607 /* AppDelegate.swift in Sources */,
+				672E041C28A266D000BE3D2F /* CardView.swift in Sources */,
 				67DF2B91289C2F53004FB633 /* TableItem.swift in Sources */,
+				672E042228A275CC00BE3D2F /* MainTableViewCell.swift in Sources */,
 				67DF2B88289BDD86004FB633 /* APIKey.swift in Sources */,
+				672E042028A26EBA00BE3D2F /* MainViewController.swift in Sources */,
 				67B5565F289CF89600E45743 /* MovieSearchAPIManager.swift in Sources */,
 				67DF87F8289ADB9900B57E58 /* MovieCollectionViewController.swift in Sources */,
 				67DF2B7D289BD6D8004FB633 /* MovieCard.swift in Sources */,

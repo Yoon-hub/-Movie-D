@@ -16,8 +16,9 @@ class MovieSearchAPIManger {
     private init() {}
     
     static let shared = MovieSearchAPIManger()
+    typealias completionHandle = (Int, MovieCard)-> ()
     
-    func requestMovieDate(startPage: Int,  completionHandler: @escaping (Int, MovieCard)-> () ) {
+    func requestMovieDate(startPage: Int,  completionHandler: @escaping completionHandle ) {
         let url = EndPoint.tmdbURL + "api_key=\(APIKey.TMDB_KEY)&page=\(startPage)"
         AF.request(url, method: .get).validate().responseData(queue: .global()) { response in
             switch response.result {
