@@ -94,6 +94,52 @@ class MovieSearchAPIManger {
             }
         }
     }
- 
     
+    let movieList = [
+        ("프레이", 766507),
+        ("미니언즈2", 438148),
+        ("엘비스", 614934),
+        ("버즈 라이트이어", 718789),
+        ("쥬라기 월드", 507086)
+    ]
+    
+    func callRecommendations(movieId: Int, completionHandler: @escaping ([String]) -> () ) {
+        let url = "\(EndPoint.castURL)\(movieId)/recommendations?api_key=\(APIKey.TMDB_KEY)&&language=ko-KR"
+        AF.request(url, method: .get).validate().responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                
+                let list = json["results"].arrayValue.map {$0["backdrop_path"].stringValue}
+                completionHandler(list)
+                
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    
+    func requestRecommendations(completionHandler: @escaping ([[String]]) -> ()) {
+        var totalList: [[String]] = []
+        
+        MovieSearchAPIManger.shared.callRecommendations(movieId: movieList[0].1) { value in
+            totalList.append(value)
+            MovieSearchAPIManger.shared.callRecommendations(movieId: self.movieList[1].1) { value in
+                totalList.append(value)
+                MovieSearchAPIManger.shared.callRecommendations(movieId: self.movieList[2].1) { value in
+                    totalList.append(value)
+                    MovieSearchAPIManger.shared.callRecommendations(movieId: self.movieList[3].1) { value in
+                        totalList.append(value)
+                        MovieSearchAPIManger.shared.callRecommendations(movieId: self.movieList[4].1) { value in
+                            totalList.append(value)
+                            completionHandler(totalList)
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
 }

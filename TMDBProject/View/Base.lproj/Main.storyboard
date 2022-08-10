@@ -182,7 +182,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pq9-mX-vmw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="734.78260869565224" y="-133.25892857142856"/>
+            <point key="canvasLocation" x="557" y="-133"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="6En-nE-gOd">
@@ -279,7 +279,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A8S-Wc-edB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1615.9420289855075" y="-133.25892857142856"/>
+            <point key="canvasLocation" x="1470" y="-133"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="wxe-Bv-hyN">
@@ -313,7 +313,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c5G-RX-9om" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2497" y="-133"/>
+            <point key="canvasLocation" x="2306" y="-133"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4W5-GG-D5f">
@@ -353,9 +353,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sRb-CM-Gyp">
-                                                    <rect key="frame" x="0.0" y="19" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <rect key="frame" x="8" y="19" width="45" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AwD-lL-U90">
@@ -401,7 +401,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="AwD-lL-U90" secondAttribute="bottom" constant="8" id="JGs-X7-HJK"/>
                                                 <constraint firstAttribute="trailing" secondItem="AwD-lL-U90" secondAttribute="trailing" id="YC4-ch-uQu"/>
                                                 <constraint firstItem="sRb-CM-Gyp" firstAttribute="top" secondItem="zoN-95-VVu" secondAttribute="topMargin" constant="8" id="d5U-hf-gND"/>
-                                                <constraint firstItem="sRb-CM-Gyp" firstAttribute="leading" secondItem="zoN-95-VVu" secondAttribute="leading" id="dy1-09-lga"/>
+                                                <constraint firstItem="sRb-CM-Gyp" firstAttribute="leading" secondItem="zoN-95-VVu" secondAttribute="leading" constant="8" id="dy1-09-lga"/>
                                                 <constraint firstItem="AwD-lL-U90" firstAttribute="top" secondItem="sRb-CM-Gyp" secondAttribute="bottom" constant="8" id="vN7-Ar-w05"/>
                                             </constraints>
                                         </tableViewCellContentView>

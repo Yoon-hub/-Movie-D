@@ -7,8 +7,10 @@
 
 import UIKit
 
+import Kingfisher
+
 class MainViewController: UIViewController {
-    let list = ["아는 와이프와 비슷한 콘텐츠", "미스터 션샤인과 비슷한 콘텐츠", "액션SF", "미국TV 프로그램"]
+    var list: [[String]] = []
     @IBOutlet weak var mainTableView: UITableView!
     
     override func viewDidLoad() {
@@ -17,6 +19,11 @@ class MainViewController: UIViewController {
         mainTableView.delegate = self
         mainTableView.backgroundColor = .clear
         
+        MovieSearchAPIManger.shared.requestRecommendations { value in
+            self.list = value
+            dump(self.list)
+            self.mainTableView.reloadData()
+        }
     }
     
 
@@ -32,27 +39,31 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.resuableIdentifer, for: indexPath) as! MainTableViewCell
-        cell.typeLabel.text = list[indexPath.section]
+        cell.typeLabel.text = "\(MovieSearchAPIManger.shared.movieList[indexPath.section].0)와 유사한 작품"
         cell.collectionView.dataSource = self
         cell.collectionView.delegate = self
-        
+        cell.collectionView.tag = indexPath.section
+    
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 190
+        return 220
     }
     
 }
 
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return list[collectionView.tag].count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MainCollectionViewCell.resuableIdentifer, for: indexPath) as! MainCollectionViewCell
+        let url = URL(string: "\(EndPoint.imageURL)\(list[collectionView.tag][indexPath.item])")
+        
+        cell.cardView.postImageView.kf.setImage(with: url)
         
         return cell
     }
