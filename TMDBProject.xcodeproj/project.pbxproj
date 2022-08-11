@@ -20,6 +20,11 @@
 		6797995F289CFD80009670B0 /* CheckGenre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6797995E289CFD80009670B0 /* CheckGenre.swift */; };
 		67979961289D451A009670B0 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67979960289D451A009670B0 /* WebViewController.swift */; };
 		67B5565F289CF89600E45743 /* MovieSearchAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B5565E289CF89600E45743 /* MovieSearchAPIManager.swift */; };
+		67B6269C28A4D646006D6E91 /* info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 67B6269B28A4D646006D6E91 /* info.plist */; };
+		67B6269E28A56645006D6E91 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B6269D28A56645006D6E91 /* MapViewController.swift */; };
+		67B626A028A57393006D6E91 /* Theater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B6269F28A57393006D6E91 /* Theater.swift */; };
+		67B626A228A5777C006D6E91 /* TheaterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67B626A128A5777C006D6E91 /* TheaterViewController.swift */; };
+		67CE5A4828A58061009952AD /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 67CE5A4728A58061009952AD /* Kingfisher */; };
 		67DF2B7B289BD574004FB633 /* CollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DF2B7A289BD574004FB633 /* CollectionView+Extension.swift */; };
 		67DF2B7D289BD6D8004FB633 /* MovieCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DF2B7C289BD6D8004FB633 /* MovieCard.swift */; };
 		67DF2B80289BDD1C004FB633 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 67DF2B7F289BDD1C004FB633 /* Alamofire */; };
@@ -29,7 +34,6 @@
 		67DF2B8D289C19C1004FB633 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DF2B8C289C19C1004FB633 /* DetailViewController.swift */; };
 		67DF2B8F289C231B004FB633 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DF2B8E289C231B004FB633 /* DetailTableViewCell.swift */; };
 		67DF2B91289C2F53004FB633 /* TableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DF2B90289C2F53004FB633 /* TableItem.swift */; };
-		67DF87F0289ACA6E00B57E58 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 67DF87EF289ACA6E00B57E58 /* Kingfisher */; };
 		67DF87F4289AD7D100B57E58 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DF87F3289AD7D100B57E58 /* MovieCollectionViewCell.swift */; };
 		67DF87F6289AD80200B57E58 /* ReuseableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DF87F5289AD80200B57E58 /* ReuseableViewProtocol.swift */; };
 		67DF87F8289ADB9900B57E58 /* MovieCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DF87F7289ADB9900B57E58 /* MovieCollectionViewController.swift */; };
@@ -47,10 +51,13 @@
 		676558462899F6BD006F3607 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		676558482899F6BF006F3607 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6765584B2899F6BF006F3607 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		6765584D2899F6BF006F3607 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		6797995E289CFD80009670B0 /* CheckGenre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckGenre.swift; sourceTree = "<group>"; };
 		67979960289D451A009670B0 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		67B5565E289CF89600E45743 /* MovieSearchAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieSearchAPIManager.swift; sourceTree = "<group>"; };
+		67B6269B28A4D646006D6E91 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
+		67B6269D28A56645006D6E91 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		67B6269F28A57393006D6E91 /* Theater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theater.swift; sourceTree = "<group>"; };
+		67B626A128A5777C006D6E91 /* TheaterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterViewController.swift; sourceTree = "<group>"; };
 		67DF2B7A289BD574004FB633 /* CollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionView+Extension.swift"; sourceTree = "<group>"; };
 		67DF2B7C289BD6D8004FB633 /* MovieCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCard.swift; sourceTree = "<group>"; };
 		67DF2B87289BDD86004FB633 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
@@ -67,9 +74,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67CE5A4828A58061009952AD /* Kingfisher in Frameworks */,
 				67DF2B8B289BF0A1004FB633 /* JGProgressHUD in Frameworks */,
 				67DF2B83289BDD2A004FB633 /* SwiftyJSON in Frameworks */,
-				67DF87F0289ACA6E00B57E58 /* Kingfisher in Frameworks */,
 				67DF2B80289BDD1C004FB633 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,7 +111,7 @@
 				67DF87F2289AD7BD00B57E58 /* Contorller */,
 				676558482899F6BF006F3607 /* Assets.xcassets */,
 				6765584A2899F6BF006F3607 /* LaunchScreen.storyboard */,
-				6765584D2899F6BF006F3607 /* info.plist */,
+				67B6269B28A4D646006D6E91 /* info.plist */,
 			);
 			path = TMDBProject;
 			sourceTree = "<group>";
@@ -122,6 +129,7 @@
 			children = (
 				676558452899F6BD006F3607 /* Main.storyboard */,
 				672E041928A2667000BE3D2F /* CardView.xib */,
+				67DF87F3289AD7D100B57E58 /* MovieCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -129,7 +137,6 @@
 		67DF87F2289AD7BD00B57E58 /* Contorller */ = {
 			isa = PBXGroup;
 			children = (
-				67DF87F3289AD7D100B57E58 /* MovieCollectionViewCell.swift */,
 				67DF87F7289ADB9900B57E58 /* MovieCollectionViewController.swift */,
 				67DF2B8C289C19C1004FB633 /* DetailViewController.swift */,
 				67DF2B8E289C231B004FB633 /* DetailTableViewCell.swift */,
@@ -137,6 +144,8 @@
 				672E041F28A26EBA00BE3D2F /* MainViewController.swift */,
 				672E042128A275CC00BE3D2F /* MainTableViewCell.swift */,
 				672E042328A27F9D00BE3D2F /* MainCollectionViewCell.swift */,
+				67B6269D28A56645006D6E91 /* MapViewController.swift */,
+				67B626A128A5777C006D6E91 /* TheaterViewController.swift */,
 			);
 			path = Contorller;
 			sourceTree = "<group>";
@@ -151,6 +160,7 @@
 				67B5565E289CF89600E45743 /* MovieSearchAPIManager.swift */,
 				6797995E289CFD80009670B0 /* CheckGenre.swift */,
 				672E041B28A266D000BE3D2F /* CardView.swift */,
+				67B6269F28A57393006D6E91 /* Theater.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -172,10 +182,10 @@
 			);
 			name = TMDBProject;
 			packageProductDependencies = (
-				67DF87EF289ACA6E00B57E58 /* Kingfisher */,
 				67DF2B7F289BDD1C004FB633 /* Alamofire */,
 				67DF2B82289BDD2A004FB633 /* SwiftyJSON */,
 				67DF2B8A289BF0A1004FB633 /* JGProgressHUD */,
+				67CE5A4728A58061009952AD /* Kingfisher */,
 			);
 			productName = TMDBProject;
 			productReference = 6765583C2899F6BD006F3607 /* TMDBProject.app */;
@@ -206,10 +216,10 @@
 			);
 			mainGroup = 676558332899F6BD006F3607;
 			packageReferences = (
-				67DF87EE289ACA6E00B57E58 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				67DF2B7E289BDD1C004FB633 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				67DF2B81289BDD2A004FB633 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				67DF2B89289BF0A1004FB633 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
+				67CE5A4628A58061009952AD /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 6765583D2899F6BD006F3607 /* Products */;
 			projectDirPath = "";
@@ -225,6 +235,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67B6269C28A4D646006D6E91 /* info.plist in Resources */,
 				6765584C2899F6BF006F3607 /* LaunchScreen.storyboard in Resources */,
 				676558492899F6BF006F3607 /* Assets.xcassets in Resources */,
 				672E041A28A2667000BE3D2F /* CardView.xib in Resources */,
@@ -246,7 +257,9 @@
 				676558402899F6BD006F3607 /* AppDelegate.swift in Sources */,
 				672E041C28A266D000BE3D2F /* CardView.swift in Sources */,
 				67DF2B91289C2F53004FB633 /* TableItem.swift in Sources */,
+				67B6269E28A56645006D6E91 /* MapViewController.swift in Sources */,
 				672E042228A275CC00BE3D2F /* MainTableViewCell.swift in Sources */,
+				67B626A028A57393006D6E91 /* Theater.swift in Sources */,
 				67DF2B88289BDD86004FB633 /* APIKey.swift in Sources */,
 				672E042028A26EBA00BE3D2F /* MainViewController.swift in Sources */,
 				67B5565F289CF89600E45743 /* MovieSearchAPIManager.swift in Sources */,
@@ -255,6 +268,7 @@
 				676558422899F6BD006F3607 /* SceneDelegate.swift in Sources */,
 				67DF2B7B289BD574004FB633 /* CollectionView+Extension.swift in Sources */,
 				67979961289D451A009670B0 /* WebViewController.swift in Sources */,
+				67B626A228A5777C006D6E91 /* TheaterViewController.swift in Sources */,
 				67DF2B8F289C231B004FB633 /* DetailTableViewCell.swift in Sources */,
 				67DF87F6289AD80200B57E58 /* ReuseableViewProtocol.swift in Sources */,
 			);
@@ -404,8 +418,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XXJ2YB9QP5;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TMDBProject/Info.plist;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = /Users/yoon/Desktop/SeSac/TMDBProject/TMDBProject/info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -432,8 +446,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XXJ2YB9QP5;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TMDBProject/Info.plist;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = /Users/yoon/Desktop/SeSac/TMDBProject/TMDBProject/info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -476,6 +490,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		67CE5A4628A58061009952AD /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		67DF2B7E289BDD1C004FB633 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -500,17 +522,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
-		67DF87EE289ACA6E00B57E58 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		67CE5A4728A58061009952AD /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 67CE5A4628A58061009952AD /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		67DF2B7F289BDD1C004FB633 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 67DF2B7E289BDD1C004FB633 /* XCRemoteSwiftPackageReference "Alamofire" */;
@@ -525,11 +544,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 67DF2B89289BF0A1004FB633 /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
 			productName = JGProgressHUD;
-		};
-		67DF87EF289ACA6E00B57E58 /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 67DF87EE289ACA6E00B57E58 /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

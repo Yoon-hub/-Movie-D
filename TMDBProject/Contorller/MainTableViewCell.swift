@@ -32,9 +32,9 @@ class MainTableViewCell: UITableViewCell {
         let width = UIScreen.main.bounds.width - (spacing * 4)
         layout.itemSize = CGSize(width: width / 3.5, height: 150)
         layout.scrollDirection = .horizontal
-        layout.sectionInset = UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 0)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         layout.minimumLineSpacing = 15
-        layout.minimumInteritemSpacing = 15
+        layout.minimumInteritemSpacing = 0
         
         return layout
     }
