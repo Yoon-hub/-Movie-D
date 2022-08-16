@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReusableView" customModule="TMDBProject" customModuleProvider="target">
+            <connections>
+                <outlet property="toturialLabel" destination="Zze-eZ-zrE" id="sMv-CH-zM0"/>
+                <outlet property="toturialName" destination="aCU-CX-eCR" id="oL8-cu-b47"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="339" height="518"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aCU-CX-eCR">
+                    <rect key="frame" x="0.0" y="0.0" width="339" height="518"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zze-eZ-zrE">
+                    <rect key="frame" x="148.5" y="377.5" width="42" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Zze-eZ-zrE" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="1l2-JC-4Aq"/>
+                <constraint firstAttribute="bottom" secondItem="Zze-eZ-zrE" secondAttribute="bottom" constant="120" id="AA6-It-kNi"/>
+                <constraint firstAttribute="trailing" secondItem="aCU-CX-eCR" secondAttribute="trailing" id="Qbn-RV-y0J"/>
+                <constraint firstAttribute="bottom" secondItem="aCU-CX-eCR" secondAttribute="bottom" id="TfW-de-RZA"/>
+                <constraint firstItem="aCU-CX-eCR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="ZjA-pd-pfu"/>
+                <constraint firstItem="aCU-CX-eCR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="buY-cn-Snp"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="77.536231884057983" y="-28.794642857142854"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
