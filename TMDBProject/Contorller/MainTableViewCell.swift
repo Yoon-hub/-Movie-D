@@ -19,7 +19,7 @@ class MainTableViewCell: UITableViewCell {
         
     }
     
-    func setUI() {
+    private func setUI() {
         typeLabel.textColor = .white
         typeLabel.font = UIFont.boldSystemFont(ofSize: 17)
         collectionView.backgroundColor = .clear

@@ -14,6 +14,7 @@ import SwiftyJSON
 
 
 
+
 class MovieCollectionViewController: UICollectionViewController {
     
     var movieCardList: [MovieCard] = []
@@ -91,6 +92,7 @@ class MovieCollectionViewController: UICollectionViewController {
     
 }
 
+//페이지네이션
 extension MovieCollectionViewController: UICollectionViewDataSourcePrefetching {
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
         

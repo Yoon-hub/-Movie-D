@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import TMDBFramework
 
 import MapKit
 import SwiftUI
+
 
 class MapViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
@@ -63,7 +65,12 @@ extension MapViewController {
             checkUserCurrentLocationAuthorization(authorizationStatus)
         } else {
             print("위치 서비스가 꺼져 있어서 위치 권한 요청을 못합니다.")
-            showRequestLocationServiceAlert()
+            //showRequestLocationServiceAlert()
+            makeAlert(title: "위치정보 이용", message: "위치 서비스를 사용할 수 없습니다. 기기의 '설정>개인정보 보호'에서 위치 서비스를 켜주세요.", buttontitle: "설정으로 이동") { _ in
+                if let appSetting = URL(string: UIApplication.openSettingsURLString) {
+                    UIApplication.shared.open(appSetting)
+                }
+            }
         }
         
     }
@@ -82,19 +89,19 @@ extension MapViewController {
         }
     }
     
-    func showRequestLocationServiceAlert() {
-      let requestLocationServiceAlert = UIAlertController(title: "위치정보 이용", message: "위치 서비스를 사용할 수 없습니다. 기기의 '설정>개인정보 보호'에서 위치 서비스를 켜주세요.", preferredStyle: .alert)
-      let goSetting = UIAlertAction(title: "설정으로 이동", style: .destructive) { _ in
-          if let appSetting = URL(string: UIApplication.openSettingsURLString) {
-              UIApplication.shared.open(appSetting)
-          }
-      }
-      let cancel = UIAlertAction(title: "취소", style: .default)
-      requestLocationServiceAlert.addAction(cancel)
-      requestLocationServiceAlert.addAction(goSetting)
-      
-      present(requestLocationServiceAlert, animated: true, completion: nil)
-    }
+//    func showRequestLocationServiceAlert() {
+//      let requestLocationServiceAlert = UIAlertController(title: "위치정보 이용", message: "위치 서비스를 사용할 수 없습니다. 기기의 '설정>개인정보 보호'에서 위치 서비스를 켜주세요.", preferredStyle: .alert)
+//      let goSetting = UIAlertAction(title: "설정으로 이동", style: .destructive) { _ in
+//          if let appSetting = URL(string: UIApplication.openSettingsURLString) {
+//              UIApplication.shared.open(appSetting)
+//          }
+//      }
+//      let cancel = UIAlertAction(title: "취소", style: .default)
+//      requestLocationServiceAlert.addAction(cancel)
+//      requestLocationServiceAlert.addAction(goSetting)
+//
+//      present(requestLocationServiceAlert, animated: true, completion: nil)
+//    }
 }
 
 extension MapViewController: CLLocationManagerDelegate {
