@@ -19,9 +19,12 @@ class WebViewController: UIViewController {
     
     let hud = JGProgressHUD()
     
+    var saveResultHandler: ((String) -> ())?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         requestTrailer()
+        
     }
     
     func requestTrailer() {
@@ -29,6 +32,7 @@ class WebViewController: UIViewController {
         MovieSearchAPIManger.shared.requestTrailerDate(movieId: movieId!) { result in
             DispatchQueue.main.async {
                 self.openWebPage(urlStr: result)
+                self.saveResultHandler?(result)
             }
           
             self.hud.dismiss(animated: true)

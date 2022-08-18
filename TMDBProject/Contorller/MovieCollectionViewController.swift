@@ -72,12 +72,19 @@ class MovieCollectionViewController: UICollectionViewController {
     func requestTrailer(sender: UIButton){
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: WebViewController.resuableIdentifer) as! WebViewController
+        
         vc.movieId = String(sender.tag)
+        
+        vc.saveResultHandler = { result in
+            print("\(result)*************")
+        }
         
         navigationController?.pushViewController(vc, animated: true)
 
         
     }
+    
+    
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
